@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Proxied.com training guide - why proxies are important. 4G/5G mobile proxies explained. English and Georgian." />
+    <title>Proxied Manual - Why Proxies Are Important</title>
+    <script>
+      (function () {
+        try {
+          var q = new URLSearchParams(window.location.search);
+          var t = q.get("theme") || localStorage.getItem("proxied-manual-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          if (t === "dark") document.documentElement.classList.add("dark");
+          document.documentElement.setAttribute("data-theme", t);
+          var l = q.get("lang") || localStorage.getItem("proxied-manual-lang");
+          if (["en", "ka", "ru", "de", "es"].includes(l))
+            document.documentElement.setAttribute("lang", l);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
